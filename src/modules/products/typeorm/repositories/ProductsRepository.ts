@@ -1,4 +1,3 @@
-import { DataSource, Repository } from "typeorm";
 
 import { Product } from "../entities/Product";
 import { PostgresDataSource } from "@shared/typeorm";
