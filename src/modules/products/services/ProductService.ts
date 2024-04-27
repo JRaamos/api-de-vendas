@@ -17,7 +17,7 @@ export class ProductService {
 
     const productByName = await ProductRepository.findByName(name)
 
-    if (productByName) {
+    if (productByName?.name === name) {
       throw new AppError('Product already exists')
     }
 
