@@ -14,7 +14,7 @@ export class ProductsController {
     const { name, price, quantity } = request.body;
     const products = await this.productService.createProduct({ name, price, quantity });
 
-    return response.json(products);
+    return response.status(201).json(products);
   };
 
   public async ProductList(request: Request, response: Response): Promise<Response> {
@@ -41,6 +41,8 @@ export class ProductsController {
 
   public async ProductDelete(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
+    console.log(id);
+
     await this.productService.DeleteProduct(id);
 
     return response.json([]);

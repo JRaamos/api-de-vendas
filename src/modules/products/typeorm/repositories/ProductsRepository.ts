@@ -1,6 +1,6 @@
 
 import { Product } from "../entities/Product";
-import { PostgresDataSource } from "@shared/typeorm";
+import { PostgresDataSource } from "../../../../shared/typeorm";
 
 export const ProductRepository = PostgresDataSource.getRepository(Product).extend({
   findByName(name: string): Promise<Product | null> {
